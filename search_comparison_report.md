@@ -1,19 +1,19 @@
-# 🔍 Comprehensive Search Comparison Report
+# Comprehensive Search Comparison Report
 
 **Generated:** 2025-07-08T12:30:12.483939
 **Collection:** SkillPilotDataSet_v7
 **Total Queries:** 21
 
 
-## 🤖 Model & Search Parameters
+## Model & Search Parameters
 
-### 🧠 Trained SOM Model Parameters
+### Trained SOM Model Parameters
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | **Model Path** | som_output/som_model.pkl | Path to trained SOM model file |
 | **Grid Size** | 25×25 | SOM grid dimensions (width × height) |
-| **Model Loaded** | ✅ Yes | Whether SOM model is successfully loaded |
+| **Model Loaded** |  Yes | Whether SOM model is successfully loaded |
 | **Total Documents** | 11,412 | Total documents in collection |
 | **Documents with SOM** | 1,000 | Documents with SOM cluster assignments |
 | **Unique Clusters** | 346 | Number of unique clusters used |
@@ -21,7 +21,7 @@
 | **Grid Coverage** | 346 | Number of grid positions with documents |
 | **Avg Docs/Cluster** | 2.9 | Average documents per cluster |
 
-### ⚙️ Optimized Search Parameters
+### Optimized Search Parameters
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
@@ -31,7 +31,7 @@
 | **Traditional Alpha** | 0.5 | Weight for traditional hybrid search (vector vs keyword) |
 | **Results per Query** | 3 | Number of results returned per search |
 
-### 📈 Parameter Optimization History
+### Parameter Optimization History
 
 - **Initial Grid**: 50×50 (over-clustered, poor performance)
 - **Second Grid**: 6×6 (good coverage, limited granularity)
@@ -39,7 +39,7 @@
 - **Expansion Factor**: Optimized from 2→3 for better overlap
 - **Alpha**: Optimized from 0.7→0.20 for balanced semantic-topological scoring
 
-## 📊 Executive Summary
+## Executive Summary
 
 | Metric | Traditional | SOM-Enhanced | Improvement |
 |--------|-------------|--------------|-------------|
@@ -48,32 +48,32 @@
 | Clusters Used | 5.4 | 1.5 | 253.1% reduction |
 | Result Overlap | - | - | 32.4% |
 
-## ⚡ Performance Analysis
+## Performance Analysis
 
 - **Average Traditional Search Duration:** 0.874 seconds
 - **Average SOM-Enhanced Search Duration:** 1.669 seconds
 - **Average Speedup:** 0.60x
 - **Performance Improvement:** -47.6%
 
-## 🎯 Quality Analysis
+## Quality Analysis
 
 - **Average Traditional Score:** 0.014
 - **Average SOM Score:** 0.023
 - **Average Result Overlap:** 32.4%
 - **Jaccard Similarity:** 0.218
 
-## 🧠 Cluster Analysis
+## Cluster Analysis
 
 - **Total Traditional Clusters Used:** 73
 - **Total SOM Clusters Used:** 22
 - **Cluster Efficiency:** 7.38 results/cluster
 - **Cluster Reduction:** 231.8%
 
-## 🔍 Detailed Query Results
+## Detailed Query Results
 
 ### Query 1: How do I configure OAuth2 authentication?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -87,7 +87,7 @@
 
 **Cluster Usage:** Traditional used clusters [209, 1012, 309, 1204, 314, 2108], SOM used clusters [314, 1014]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -110,7 +110,7 @@
 | **Traditional** | 0.015 | 314 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/mule-secure-token-service | # Mule Secure Token Service OAuth 2.0<br>The Mule runtime engine supports the OAuth 2.0 protocol. The way to configure OAuth 2.0 authorization differs, depending on the OAuth role and your objective:<br>* Configure authentication in your client Mule app when sending requests to a service that requires authentication, such as the Github OAuth2 server. Use the OAuth Module for the OAuth2 configuration.<br>... |
 | **SOM-Enhanced** | 0.061 | 1014 | mulesoft | https://docs.mulesoft.com/microsoft-dynamics-365-connector/latest/microsoft-dynamics-365-connector-studio | The following image shows an example OAuth client credentials configuration using property placeholder values:<br>### OAuth 2.0 Username and Password Authentication<br>With OAuth 2.0 username and password authentication, the app makes a POST request that includes a username and password. If the credentials are valid, the server returns an access token.<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -119,7 +119,7 @@
 
 ### Query 2: What are the best practices for API security?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -133,7 +133,7 @@
 
 **Cluster Usage:** Traditional used clusters [2213, 2024, 2411, 813, 209, 309, 701], SOM used clusters [209]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -156,7 +156,7 @@
 | **Traditional** | 0.010 | 209 | mulesoft | https://docs.mulesoft.com/mcp-connector/latest/mcp-connector-studio | ### Best Practices for MCP Policies<br>* Always apply authentication policies to production MCP servers.<br>* Use logging policies to track MCP client activity.<br>... |
 | **SOM-Enhanced** | 0.007 | 209 | mulesoft | https://docs.mulesoft.com/api-manager/latest/api-proxy-landing-page | # Configure Proxies for Your APIs<br>Protect your APIs or web services against attacks by using API proxies, which function as intermediaries between the external applications and the backend server. The API proxy is agnostic to your backend’s location and programming language. Additionally, your backend can be a non-Mule application.<br>When you deploy an API proxy in front of your API, the proxy adopts API gateway capabilities to secure the API by using different types of policies. Anypoint Platform enables you to deploy the proxy application directly to CloudHub or Anypoint Runtime Fabric. Your proxy application is then automatically tracked by API Manager.<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 1/10 (10.0%)
 - **Jaccard Similarity:** 0.053
@@ -165,7 +165,7 @@
 
 ### Query 3: How to implement JWT token validation?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -179,7 +179,7 @@
 
 **Cluster Usage:** Traditional used clusters [2413], SOM used clusters [2413]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -202,7 +202,7 @@
 | **Traditional** | 0.016 | 2413 | mulesoft | https://docs.mulesoft.com/gateway/latest/policies-included-jwt-validation | JWKS URL | This field appears if you selected the **JWKS** method as JWT Key Origin. Ignore this field if you selected **none** as JWT Signing Method. | JWKS server URLs that contain the public keys for the signature validation. Configure multiple JWKS servers with a comma-separated list of the URLs.<br>JWKS Caching Time To Live | Amount of time, in minutes, that the JWKS is valid. When the JWKS expires, the policy retrieves the JWKS from each JWKS server again. The default value is 60 minutes. Ignore this field if you selected **none** as JWT Signing Method. | This field input is the amount of time, in minutes, during which the policy considers the JWKS valid.<br>JWKS Service connection timeout (milliseconds) | Maximum time, in milliseconds, to wait for a response from each JWKS service when authenticating the access token validation endpoint. The default value is 10 seconds.<br>... |
 | **SOM-Enhanced** | 0.106 | 2413 | mulesoft | https://docs.mulesoft.com/pdk/latest/policies-pdk-configure-features-jwt | # Using JWT Library Functions<br>To view an example policy project that uses Flex Gateway Policy Development Kit (PDK)'s JWT library, see JWT Validation Policy Example.<br>---<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 9/10 (90.0%)
 - **Jaccard Similarity:** 0.818
@@ -211,7 +211,7 @@
 
 ### Query 4: How to create a REST API endpoint?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -225,7 +225,7 @@
 
 **Cluster Usage:** Traditional used clusters [1800, 424, 1900, 2220, 209, 309, 503, 922], SOM used clusters [503]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -248,7 +248,7 @@
 | **Traditional** | 0.014 | 922 | mulesoft | https://docs.mulesoft.com/exchange/publish-an-http-api | # Publish an HTTP API Asset<br>The HTTP API enables Exchange users specify a placeholder for an endpoint. After you create the HTTP API endpoint, you can optionally manage the endpoint with API Manager.<br>The HTTP API asset describes what the API endpoint does and how users can connect the API to their programs.<br>... |
 | **SOM-Enhanced** | 0.014 | 503 | mulesoft | https://docs.mulesoft.com/api-manager/latest/create-instance-task-flex | * Click **Create new API** :<br>1. Enter a **Name** for the new API asset.<br>2. Select the **Asset type** from the following options:<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -257,7 +257,7 @@
 
 ### Query 5: What is the difference between SOAP and REST?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -271,7 +271,7 @@
 
 **Cluster Usage:** Traditional used clusters [1920, 424, 105, 618, 1008, 209, 208], SOM used clusters [209]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -294,7 +294,7 @@
 | **Traditional** | 0.015 | 209 | mulesoft | https://docs.mulesoft.com/gateway/latest/flex-troubleshoot-soap-apis | # Troubleshooting SOAP APIs<br>Flex Gateway does not natively support SOAP APIs and does not provide any schema validation for XML. However, you can publish an HTTP API instance to a secure SOAP upstream service.<br>To create an HTTP API instance to a secure SOAP API upstream service, refer to the following:<br>... |
 | **SOM-Enhanced** | 0.006 | 209 | mulesoft | https://docs.mulesoft.com/api-manager/latest/api-proxy-landing-page | ## How API Proxies Work<br>The API proxy intercepts incoming API requests, and can provide authentication, rate limiting, request and response transformation, and logging features.<br>When a client application sends a request to your backend API, the request is first intercepted by the API proxy. The proxy applies policies for the requested backend API, and the policies determine whether, and how, to forward the request to your backend API.<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 1/10 (10.0%)
 - **Jaccard Similarity:** 0.053
@@ -303,7 +303,7 @@
 
 ### Query 6: How to handle API rate limiting?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -317,7 +317,7 @@
 
 **Cluster Usage:** Traditional used clusters [1512, 1316, 1423], SOM used clusters [1512, 1423]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -340,7 +340,7 @@
 | **Traditional** | 0.016 | 1512 | mulesoft | https://docs.mulesoft.com/gateway/latest/policies-included-rate-limiting-sla | By default, the X-RateLimit headers are disabled in the response. You can enable these headers by selecting **Expose Headers** when you configure the policy.<br>When on distributed mode, the X-Ratelimit-Remaining header is not perfectly synchronized with all the replicas. With multiple replicas on distributed mode, the X-Ratelimit-Remaining header is an estimation of how much quota the replica has available for itself. It does not represent the actual value of the remaining quota available for the API. The following describes a valid scenario:<br>* Created a SLA tier name "Titanium" having rate limit of "999999999 req per 10 min"<br>... |
 | **SOM-Enhanced** | 0.021 | 1423 | mulesoft | https://docs.mulesoft.com/mule-gateway/policies-included-spike-control | Queuing a request requires retaining a thread and an HTTP connection. When you specify a `Queuing Limit` for the policy, the parameter protects the gateway from running out of resources and ensures that the API does not fail in case of an attack.<br>## Request Timelines<br>The following diagram illustrates the lifespan of each request accepted by the algorithm, using the configuration defined in the previous section:<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 7/10 (70.0%)
 - **Jaccard Similarity:** 0.538
@@ -349,7 +349,7 @@
 
 ### Query 7: How to optimize database queries?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -363,7 +363,7 @@
 
 **Cluster Usage:** Traditional used clusters [1601, 1706, 1808, 209, 309, 408], SOM used clusters [408, 309]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -386,7 +386,7 @@
 | **Traditional** | 0.016 | 408 | mulesoft | https://docs.mulesoft.com/db-connector/latest | # Database Connector 1.14<br>Anypoint Connector for Database (Database Connector) establishes communication between your Mule app and a relational database. Database Connector can connect to almost any Java Database Connectivity (JDBC) relational database and run SQL operations. An application can support multi-tenant scenarios using the same configuration element, changing the connection attributes based on, for example, information coming from each request.<br>Database Connector has connection providers that automatically set the driver class name and create JDBC URLs with given parameters for the following databases:<br>... |
 | **SOM-Enhanced** | 0.008 | 309 | mulesoft | https://docs.mulesoft.com/mongodb-connector/latest/mongodb-connector-upgrade-migrate | ## Removed Operations<br>The following operations were removed from the MongoDB connector:<br>Removed from MongoDB 5.x | Can be reproduced in MongoDB 6.0.0 through<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 3/10 (30.0%)
 - **Jaccard Similarity:** 0.176
@@ -395,7 +395,7 @@
 
 ### Query 8: What are the different types of database indexes?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -409,7 +409,7 @@
 
 **Cluster Usage:** Traditional used clusters [1601, 1808, 1814, 408, 2301], SOM used clusters [309, 1007]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -432,7 +432,7 @@
 | **Traditional** | 0.014 | 408 | mulesoft | https://docs.mulesoft.com/db-connector/latest/database-connector-connection | 8. In **Global Elements** , click **Create** to open the **Choose Global Type** window.<br>9. In **Filter** , type `database`, select **Database Config** , and click **OK**.<br>10. In **Database Config** > **Connection** , select **Data Source Reference Connection**.<br>... |
 | **SOM-Enhanced** | 0.006 | 309 | mulesoft | https://docs.mulesoft.com/mongodb-connector/latest/mongodb-connector-upgrade-migrate | To optimize pagination and improve performance when migrating to MongoDB Connector 6.x, the following approaches are recommended:<br>* Avoid using `skip()` for large offsets.<br>Instead of using the **Num To Skip** field, it is more efficient to refine query conditions to exclude unwanted documents directly.<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 0/10 (0.0%)
 - **Jaccard Similarity:** 0.000
@@ -441,7 +441,7 @@
 
 ### Query 9: How to implement database connection pooling?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -455,7 +455,7 @@
 
 **Cluster Usage:** Traditional used clusters [408, 1814], SOM used clusters [408]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -478,7 +478,7 @@
 | **Traditional** | 0.015 | 1814 | mulesoft | https://docs.mulesoft.com/db-connector/latest/database-documentation | Indicates whether to create the database if it does not already exist<br>**Connection Properties** |  Specifies a list of custom key-value connection properties for the configuration<br>**Reconnection** |  |  When the application is deployed, a connectivity test is performed on all connectors. If set to `true`, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy.<br>... |
 | **SOM-Enhanced** | 0.044 | 408 | mulesoft | https://docs.mulesoft.com/mule-sdk/latest/connections | Example of the XML for this config with the example `MyConnectionProvider`:<br>```<br><xyz:config name="a-xyz-config" someParameter="value"><br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 6/10 (60.0%)
 - **Jaccard Similarity:** 0.429
@@ -487,7 +487,7 @@
 
 ### Query 10: How to debug API errors?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -501,7 +501,7 @@
 
 **Cluster Usage:** Traditional used clusters [810, 1516, 209, 403, 309, 1302, 506], SOM used clusters [403]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -524,7 +524,7 @@
 | **Traditional** | 0.014 | 1516 | mulesoft | https://docs.mulesoft.com/anypoint-code-builder/int-debug-mule-apps | # Debugging Mule Applications<br>Cloud IDE<br>Desktop IDE<br>... |
 | **SOM-Enhanced** | 0.041 | 403 | mulesoft | https://docs.mulesoft.com/datagraph/troubleshoot-schemas-queries | ## Troubleshooting mTLS Errors<br>If you encounter mTLS errors, troubleshoot them as follows:<br>* Uploading a file that cannot be read error<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -533,7 +533,7 @@
 
 ### Query 11: What are common HTTP status codes?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -547,7 +547,7 @@
 
 **Cluster Usage:** Traditional used clusters [1313, 804, 1204, 1109, 1501], SOM used clusters [1109]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -570,7 +570,7 @@
 | **Traditional** | 0.016 | 804 | mulesoft | https://docs.mulesoft.com/design-center/apid-behavioral-headers | If MS2-Randomize were set to `true`, the payload in the response from the mocking service might look like this, with the value of `id` conforming to the constraints:<br>```<br>{<br>... |
 | **SOM-Enhanced** | 0.017 | 1109 | mulesoft | https://docs.mulesoft.com/api-manager/latest/wsdl-raml-http-proxy-reference | # Handling API Proxy Status Codes<br>In Mule 4, WSDL, RAML, HTTP, and HTTPS proxies handle errors and requests as described in the following tables. Mule 4 returns different error codes, depending on the proxy type, or no error code in response to problematic requests. This table shows whether or not Mule returns a 504, 400, or 404 error code when your WSDL, RAML, HTTP, and HTTPS proxy receives a problematic request.<br>Error Code | WSDL | RAML | OAS | HTTP | HTTPS<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 4/10 (40.0%)
 - **Jaccard Similarity:** 0.250
@@ -579,7 +579,7 @@
 
 ### Query 12: How to implement proper error handling?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -593,7 +593,7 @@
 
 **Cluster Usage:** Traditional used clusters [505, 1116, 1109], SOM used clusters [705, 1109]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -616,7 +616,7 @@
 | **Traditional** | 0.015 | 1116 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/error-handling | ### Using On-Error Components to Handle Messaging Errors<br>Instead of relying on the default error-handling mechanism, you can use On-Error components (On Error Continue and On Error Propagate) inside a built-in or external Error Handler component.<br>The following example shows a simple flow that is configured in Studio to return the results of an HTTP request when the HTTP listener is triggered. Unlike the default error-handling example, this example configures On Error Continue (`on-error-continue`) inside the flow’s built-in Error Handler (`error-handler`) component, and On Error Continue contains a Logger that writes a description of the error.<br>... |
 | **SOM-Enhanced** | 0.035 | 705 | mulesoft | https://docs.mulesoft.com/munit/latest/test-mock-errors-cookbook | # Testing and Mocking Errors<br>Anypoint Code Builder<br>Anypoint Studio<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -625,7 +625,7 @@
 
 ### Query 13: How to improve application performance?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -639,7 +639,7 @@
 
 **Cluster Usage:** Traditional used clusters [1414, 1803, 1616, 1105, 600], SOM used clusters [1313, 1803]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -662,7 +662,7 @@
 | **Traditional** | 0.016 | 1803 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/tuning-test-validations | Using this information, you can then create different repeatable, common, and high-load scenarios that test the performance limits of Mule without causing failure. To imitate actual customer behavior, introduce variables such as think time between requests and latency to the backend service.<br>## Execute Performance Test Validations<br>Before you start the test execution, ideally remove the ramp-up, tear down, and error percentage settings that can affect the throughput calculation results. Considering the best practices from the previous section, execute the testing:<br>... |
 | **SOM-Enhanced** | 0.027 | 1803 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/tuning-test-validations | Using this information, you can then create different repeatable, common, and high-load scenarios that test the performance limits of Mule without causing failure. To imitate actual customer behavior, introduce variables such as think time between requests and latency to the backend service.<br>## Execute Performance Test Validations<br>Before you start the test execution, ideally remove the ramp-up, tear down, and error percentage settings that can affect the throughput calculation results. Considering the best practices from the previous section, execute the testing:<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 5/10 (50.0%)
 - **Jaccard Similarity:** 0.333
@@ -671,7 +671,7 @@
 
 ### Query 14: What is caching and how to implement it?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -685,7 +685,7 @@
 
 **Cluster Usage:** Traditional used clusters [209, 323, 1515], SOM used clusters [2320, 323]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -708,7 +708,7 @@
 | **Traditional** | 0.015 | 209 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/tuning-caching | # Caching<br>Identifying key aspects of your data such as when to use cache and which cache strategy to follow, helps you to improve processing performance:<br>* Is the data frequently called, with often repeated results?<br>... |
 | **SOM-Enhanced** | 0.031 | 323 | mulesoft | https://docs.mulesoft.com/mule-gateway/policies-included-http-caching | # HTTP Caching Policy<br>**Policy Name** | HTTP caching<br>---|---<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 6/10 (60.0%)
 - **Jaccard Similarity:** 0.429
@@ -717,7 +717,7 @@
 
 ### Query 15: How to optimize memory usage?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -731,7 +731,7 @@
 
 **Cluster Usage:** Traditional used clusters [2008, 1619, 1616, 1119], SOM used clusters [2320, 1616]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -754,7 +754,7 @@
 | **Traditional** | 0.013 | 1616 | mulesoft | https://docs.mulesoft.com/runtime-fabric/latest/deploy-resource-allocation-self-managed | ## Memory Allocation<br>The minimum values for the amount of memory allocated to each replica of a Mule application or API gateway is:<br>* 0.7 GiB memory for Mule 4<br>... |
 | **SOM-Enhanced** | 0.000263 | 1616 | mulesoft | https://docs.mulesoft.com/runtime-fabric/2.4/deploy-resource-allocation-self-managed | ## Memory Allocation<br>The minimum values for the amount of memory allocated to each replica of a Mule application or API gateway are the following:<br>* 0.7 GiB memory for Mule 4<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 3/10 (30.0%)
 - **Jaccard Similarity:** 0.176
@@ -763,7 +763,7 @@
 
 ### Query 16: How to use Docker containers?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -777,7 +777,7 @@
 
 **Cluster Usage:** Traditional used clusters [518, 2407, 201, 106, 1519, 24, 1208], SOM used clusters [1208]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -800,7 +800,7 @@
 | **Traditional** | 0.015 | 201 | mulesoft | https://docs.mulesoft.com/runtime-fabric/1.13/configure-local-registry | You should see a message that the login was successful.<br>3. To pull and synchronize images, log in into your own private container registry and run the following command, replacing `<docker-server>` where appropriate:<br>For the US control plane:<br>... |
 | **SOM-Enhanced** | 0.004 | 1208 | mulesoft | https://docs.mulesoft.com/gateway/latest | * A standalone runtime in a Docker container<br>* A sidecar to a backend application in a Docker container, thereby protecting a single backend application<br>* A Kubernetes `Deployment` for high-availability, high-performance use cases<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -809,7 +809,7 @@
 
 ### Query 17: What is Kubernetes and how does it work?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -823,7 +823,7 @@
 
 **Cluster Usage:** Traditional used clusters [1412, 518, 1420, 813, 1104, 1203], SOM used clusters [1312, 1412]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -846,7 +846,7 @@
 | **Traditional** | 0.015 | 813 | mulesoft | https://docs.mulesoft.com/runtime-fabric/latest/configure-kubernetes | # Configuring Kubernetes for Runtime Fabric<br>To configure Kubernetes for Anypoint Runtime Fabric, review the following topics:<br>* Kubernetes (K8s) Best Practices for Runtime Fabric Review scalability benchmarks and cluster configurations best practices.<br>... |
 | **SOM-Enhanced** | 0.013 | 1312 | mulesoft | https://docs.mulesoft.com/runtime-fabric/latest/rtfctl-permissions | cronjobs | create, get, patch, update<br>rtf.mulesoft.com | persistencegateways | get, list, watch<br>rtfctl-audit | create, get, patch, update<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 4/10 (40.0%)
 - **Jaccard Similarity:** 0.250
@@ -855,7 +855,7 @@
 
 ### Query 18: How to implement microservices architecture?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -869,7 +869,7 @@
 
 **Cluster Usage:** Traditional used clusters [623, 209, 210, 914, 2104, 1112, 1212], SOM used clusters [209]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -892,7 +892,7 @@
 | **Traditional** | 0.015 | 210 | mulesoft | https://docs.mulesoft.com/runtime-manager/runtime-manager-agent-architecture | # Runtime Manager Agent Architecture<br>Private Cloud Edition<br>The Anypoint Runtime Manager agent is a Mule plugin that exposes the Mule JAVA API as a service, allowing users to manipulate and monitor Mule instances from external systems.<br>... |
 | **SOM-Enhanced** | 0.014 | 209 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/hadr-guide | System backups are a major component of a solid disaster recovery program. There are three types of recovery: cold, warm, and hot.<br>Term | Definition | Example<br>---|---|---<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 2/10 (20.0%)
 - **Jaccard Similarity:** 0.111
@@ -901,7 +901,7 @@
 
 ### Query 19: How to implement a complete authentication system with OAuth2, JWT tokens, and role-based access control?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -915,7 +915,7 @@
 
 **Cluster Usage:** Traditional used clusters [2409, 2413, 209, 1010, 1012, 309, 314], SOM used clusters [209, 314]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -938,7 +938,7 @@
 | **Traditional** | 0.014 | 2413 | mulesoft | https://docs.mulesoft.com/pdk/latest/policies-pdk-configure-features-jwt | # Using JWT Library Functions<br>To view an example policy project that uses Flex Gateway Policy Development Kit (PDK)'s JWT library, see JWT Validation Policy Example.<br>---<br>... |
 | **SOM-Enhanced** | 0.016 | 314 | mulesoft | https://docs.mulesoft.com/oauth2-provider-module/latest | # OAuth2 Provider Module 1.2<br>The OAuth2 Provider module enables a Mule runtime engine (Mule) app to be configured as an Authentication Manager in an OAuth2 dance. With this role, the application can authenticate to previously registered clients, grant tokens, validate tokens, or register and delete clients, all during the execution of a flow.<br>The following documentation assumes a basic knowledge of the OAuth2 authorization protocol. For further reference, see the RFC-6749.<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 3/10 (30.0%)
 - **Jaccard Similarity:** 0.176
@@ -947,7 +947,7 @@
 
 ### Query 20: What are the best practices for designing a scalable microservices architecture with proper error handling and monitoring?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -961,7 +961,7 @@
 
 **Cluster Usage:** Traditional used clusters [1803, 1116, 911, 209, 309, 1109, 2104, 1212], SOM used clusters [209, 1109]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -984,7 +984,7 @@
 | **Traditional** | 0.012 | 1212 | mulesoft | https://docs.mulesoft.com/cloudhub/cloudhub-architecture | ## Availability and Scalability<br>CloudHub is designed to be highly available and scalable through redundancy, intelligent healing, and zero-downtime updates. It also enables customers to scale and benefit from added reliability through high availability features.<br>### Redundant Platform<br>... |
 | **SOM-Enhanced** | 0.009 | 1109 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/error-handling | # Error Handlers<br>Errors that occur in Mule belong to one of two major categories:<br>*   * Messaging Errors<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 3/10 (30.0%)
 - **Jaccard Similarity:** 0.176
@@ -993,7 +993,7 @@
 
 ### Query 21: How to optimize database performance for high-traffic applications with proper indexing and caching strategies?
 
-#### 📈 Query Metrics
+#### Query Metrics
 
 | Metric | Traditional | SOM-Enhanced |
 |--------|-------------|--------------|
@@ -1007,7 +1007,7 @@
 
 **Cluster Usage:** Traditional used clusters [323, 1512, 1803, 1616, 209, 600], SOM used clusters [600]
 
-#### 📊 Results Comparison Table
+#### Results Comparison Table
 
 **Rank 1**
 
@@ -1030,7 +1030,7 @@
 | **Traditional** | 0.016 | 1616 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/mule-high-availability-ha-clusters | ## Clustering and Load Balancing<br>When Mule clusters are used to serve TCP requests (where TCP includes SSL/TLS, UDP, Multicast, HTTP, and HTTPS), some load balancing is needed to distribute the requests among the clustered instances. Though Anypoint Runtime Fabric includes load-balancer capability as part of the underlying Docker Kubernetes (K8s) infrastructure, customer-hosted, manually-provisioned clusters require you to supply a third party load balancer or perform client-side load balancing and fail-over. There are various software load balancers available, two of them are:<br>* NGINX, an open-source HTTP server and reverse proxy. You can use NGINX’s `HttpUpstreamModule` for HTTP(S) load balancing.<br>... |
 | **SOM-Enhanced** | 0.015 | 600 | mulesoft | https://docs.mulesoft.com/mule-runtime/latest/choosing-the-right-clustering-topology | Cons:<br>* Requires lots of transactions, and transactions can be complicated<br>* Performance hit if you’re using XA<br>... |
 
-#### 🔄 Overlap Analysis
+#### Overlap Analysis
 
 - **Overlapping Results:** 1/10 (10.0%)
 - **Jaccard Similarity:** 0.053

@@ -1,6 +1,6 @@
 # 🚀 Infusing RAG LLM with Unsupervised ML: My Experimental Journey
 
-*This article documents my experimental journey to enhance a Retrieval-Augmented Generation (RAG) pipeline using unsupervised machine learning—specifically, Self-Organizing Maps (SOM). Through iterative experimentation and a critical model upgrade, this journey demonstrates the potential of unsupervised ML in RAG systems and highlights the importance of embedding model quality in achieving successful clustering-based search.*
+*This article documents my experimental journey to enhance a Retrieval-Augmented Generation (RAG) pipeline using unsupervised machine learning specifically, Self-Organizing Maps (SOM). Through iterative experimentation and a critical model upgrade, this journey demonstrates the potential of unsupervised ML in RAG systems and highlights the importance of embedding model quality in achieving successful clustering-based search.*
 
 **✅ Important Note**: This was an experimental approach that successfully delivered significant quality improvements over traditional vector search. The SOM-enhanced approach provided 68.9% better search scores with acceptable performance trade-offs. The learnings from this experiment demonstrate the potential of unsupervised ML in RAG systems when combined with high-quality embedding models.
 
@@ -18,17 +18,19 @@
 10. [Where I Stand Now: The Experimental Success](#where-i-stand-now-the-experimental-success)
 11. [Your Turn: What's Your Vision?](#your-turn-whats-your-vision)
 
+**Detailed Analysis**: For comprehensive query-by-query insights and performance breakdowns, see the [Search Comparison Report](search_comparison_report.md).
+
 ---
 
 ## The Journey Begins: From Theory to Reality
 
-Imagine you're standing at the edge of a vast library with over 11,000 technical documents. Your task? Find the most relevant information for a user's query in milliseconds. Traditional search methods work, but they're like searching through every book in the library—one by one. What if we could organize this library into intelligent sections that understand the relationships between documents?
+Imagine you're standing at the edge of a vast library with over a milion technical documents. Your task? Find the most relevant information for a user's query in milliseconds. Traditional search methods work, but they're like searching through every book in the library one by one. What if we could organize this library into intelligent sections that understand the relationships between documents?
 
 This is exactly what I set out to explore: **enhancing RAG systems with unsupervised machine learning**.
 
-**📚 Dataset**: This experimental work uses my [MuleSoft Technical Articles Dataset](https://huggingface.co/datasets/BassemE/mulesoft-technical-articles) - a comprehensive collection of 11,412 technical documents that I created by crawling and chunking MuleSoft's documentation using my custom tools, featuring detailed articles on API development, integration patterns, security, and best practices.
+**📚 Dataset**: This experimental work uses my [MuleSoft Technical Articles Dataset](https://huggingface.co/datasets/BassemE/mulesoft-technical-articles) , a comprehensive collection of 11,412 technical documents that I created by crawling and chunking MuleSoft's documentation using my custom tools, featuring detailed articles on API development, integration patterns, security, and best practices.
 
-**🧠 Pre-trained SOM Model**: The trained Self-Organizing Map model used in this experiment is available at [BassemE/som_model](https://huggingface.co/BassemE/som_model) - ready for use if you want to experiment with SOM-enhanced RAG applications.
+**🧠 Pre-trained SOM Model**: The trained Self-Organizing Map model used in this experiment is available at [BassemE/som_model](https://huggingface.co/BassemE/som_model) , ready for use if you want to experiment with SOM-enhanced RAG applications.
 
 ![SOM Visualization](plots/som_visualization.png)
 
@@ -78,7 +80,7 @@ Unlike supervised learning, which requires labeled training data, **unsupervised
 
 ### Why Unsupervised ML for RAG Systems?
 
-Traditional RAG systems rely heavily on **vector similarity search**—comparing query embeddings directly with document embeddings. While effective, this approach has limitations:
+Traditional RAG systems rely heavily on **vector similarity search** comparing query embeddings directly with document embeddings. While effective, this approach has limitations:
 
 - **Scalability**: Linear search through all documents becomes slow
 - **Semantic Drift**: Similar vectors don't always mean similar meaning
@@ -103,27 +105,27 @@ A **Self-Organizing Map** is a type of artificial neural network that uses **com
 
 ### How SOM Works: Step by Step
 
-#### 1. **Grid Initialization** 🏗️
+#### 1. **Grid Initialization**
 ```python
 # Create a 2D grid of nodes (neurons)
 som = MiniSom(grid_width, grid_height, input_dimension)
 # Each node has weights initialized randomly
 ```
 
-#### 2. **Competitive Learning** 🏆
+#### 2. **Competitive Learning**
 For each input (document embedding):
 - Find the **Best Matching Unit (BMU)** - the node whose weights are closest to the input
 - Update the BMU's weights to be more similar to the input
 - Update neighboring nodes' weights (but less so)
 
-#### 3. **Neighborhood Update** 🏘️
+#### 3. **Neighborhood Update**
 ```python
 # The winner and its neighbors get updated
 for neighbor in get_neighbors(bmu, radius):
     neighbor.weights += learning_rate * (input - neighbor.weights)
 ```
 
-#### 4. **Convergence** ⚖️
+#### 4. **Convergence**
 - Repeat for many iterations
 - Gradually reduce learning rate and neighborhood radius
 - Map stabilizes, preserving topological relationships
@@ -205,22 +207,22 @@ The switch from Qwen3-Embedding-8B-GGUF to OpenAI text-embedding-3-large marked 
 
 ### Key Advantages of SOM for Document Search
 
-#### 1. **Topological Preservation** 🗺️
+#### 1. **Topological Preservation**
 - **Similar documents** are mapped to **nearby locations** on the grid
 - **Dissimilar documents** are mapped to **distant locations**
 - This creates a **semantic map** of your document space
 
-#### 2. **Dimensionality Reduction** 📊
+#### 2. **Dimensionality Reduction**
 - **3072-dimensional embeddings** → **2D grid coordinates**
 - Makes high-dimensional spaces **interpretable and visualizable**
 - Enables **fast distance calculations**
 
-#### 3. **Natural Clustering** 🎯
+#### 3. **Natural Clustering**
 - Documents **self-organize** into meaningful groups
 - No need to specify number of clusters beforehand
 - **Emergent structure** reflects data relationships
 
-#### 4. **Efficient Search** ⚡
+#### 4. **Efficient Search**
 - **Cluster-based retrieval** instead of brute-force search
 - **Reduced search space** for faster queries
 - **Focused exploration** of relevant document regions
@@ -250,7 +252,7 @@ My first experimental attempt was ambitious: I trained a SOM with a **50×50 gri
 
 ### The Lesson
 
-I learned that **clustering quality** isn't just about having many clusters—it's about having the right number of clusters for your data size and the right balance between coverage and granularity.
+I learned that **clustering quality** isn't just about having many clusters, it's about having the right number of clusters for your data size and the right balance between coverage and granularity.
 
 ---
 
@@ -280,7 +282,7 @@ This taught me about the fundamental trade-off in unsupervised clustering:
 
 ## Iteration and Comparison: The 15×15 and 25×25 Grids
 
-I experimented with a **15×15 grid**, which gave me about **52 documents per cluster**—a much better balance between coverage and granularity. Encouraged, I pushed further, training a **25×25 SOM** for even finer separation. Each time, I updated my Weaviate database with the new cluster assignments and ran comprehensive search comparisons.
+I experimented with a **15×15 grid**, which gave me about **52 documents per cluster** a much better balance between coverage and granularity. Encouraged, I pushed further, training a **25×25 SOM** for even finer separation. Each time, I updated my Weaviate database with the new cluster assignments and ran comprehensive search comparisons.
 
 ### The 15×15 Breakthrough
 
@@ -323,7 +325,7 @@ I tested **21 diverse queries** covering:
 - Infrastructure (Docker, Kubernetes, microservices)
 - Error Handling & Debugging
 
-**📊 Detailed Analysis**: For a comprehensive breakdown of all 21 queries with detailed performance metrics, result comparisons, and cluster analysis, see the [Search Comparison Report](search_comparison_report.md).
+**Deep Dive Available**: For comprehensive insights into all 21 queries with detailed performance metrics, result comparisons, cluster analysis, and query-by-query breakdowns, check out the [Search Comparison Report](search_comparison_report.md). This consolidated report provides granular analysis of how each query performed across different configurations and reveals the patterns that led to the successful SOM implementation.
 
 ### Key Metrics I Tracked
 
@@ -357,11 +359,11 @@ I built tools to debug every step: extracting scores, visualizing clusters, and 
 
 ### The Euclidean Distance Discovery
 
-I discovered that my SOM was using **Euclidean distance** for query-to-cluster mapping, not cosine similarity. This meant:
+I discovered that my SOM was using **Euclidean distance** for query to cluster mapping, not cosine similarity. This meant:
 - **Pros**: Fast computation, works well for normalized embeddings
 - **Cons**: Can group semantically unrelated documents if they're numerically close
 
-### Example Debug Finding: Cluster 504 Analysis
+### Example Debug Finding: Cluster Id 504 Analysis
 
 Let me dive deep into a specific example that illustrates both the power and limitations of SOM clustering. When I queried "OAuth2 authentication", cluster 504 was selected as one of the top clusters. Here's what I discovered:
 
@@ -411,7 +413,7 @@ Distance to Query Embedding: 144.3070
 **Content Analysis**:
 - **Only 1 out of 7 documents** is actually relevant to OAuth2
 - The relevant document mentions "Issuer", "client provider", and "oauth" in the metadata URL
-- The other 6 documents cover teams, partner management, permissions, GitHub sync, and Composer—completely unrelated to OAuth2
+- The other 6 documents cover teams, partner management, permissions, GitHub sync, and Composer completely unrelated to OAuth2
 
 #### 4. Summary & Analysis
 
@@ -429,11 +431,11 @@ Distance to Query Embedding: 144.3070
 3. **Search Quality Impact**:
    - **Pros**: I get 1 highly relevant OAuth2 document
 - **Cons**: I also get 6 irrelevant documents about teams, partners, permissions, etc.
-   - **Result**: 14% relevance rate (1/7 documents) - very poor quality
+   - **Result**: 14% relevance rate (1/7 documents) , very poor quality
 
 **Root Cause Analysis**:
 
-The SOM query-to-cluster mapping is based purely on vector distance in embedding space. The embedding for "OAuth2 authentication" is closest to cluster centroids that may not be semantically pure, due to:
+The SOM query to cluster mapping is based purely on vector distance in embedding space. The embedding for "OAuth2 authentication" is closest to cluster centroids that may not be semantically pure, due to:
 
 ```python
 # The embedding model likely learned these associations:
@@ -537,12 +539,7 @@ After many experimental trials and a critical model upgrade, I've achieved a SOM
    - **Direct API access** ensured high-quality, consistent embeddings
    - **Better semantic coherence** in clusters compared to quantized models
 
-2. **Improved Data Processing**:
-   - **Better document preprocessing** and chunking strategies
-   - **Consistent embedding generation** across all documents
-   - **Proper metadata handling** for source URLs and document relationships
-
-3. **Optimized SOM Configuration**:
+2. **Optimized SOM Configuration**:
    - **25×25 grid size** provided optimal balance of coverage and granularity
    - **Expansion factor of 3** ensured good result coverage
    - **Alpha of 0.10** balanced semantic and topological scoring effectively
@@ -591,10 +588,10 @@ After many experimental trials and a critical model upgrade, I've achieved a SOM
 
 This experiment successfully demonstrates the potential of unsupervised ML in RAG systems and highlights important factors for success. This journey showcases:
 
-1. **The importance of embedding model quality** - the choice of model dramatically impacts clustering success
-2. **The value of iterative experimentation** - persistence and systematic testing lead to breakthroughs
-3. **The potential of unsupervised ML in RAG** - when properly implemented, clustering can significantly improve search quality
-4. **The need for comprehensive evaluation** - multiple metrics and human judgment are essential for assessing success
+1. **The importance of embedding model quality**: the choice of model dramatically impacts clustering success
+2. **The value of iterative experimentation**: persistence and systematic testing lead to breakthroughs
+3. **The potential of unsupervised ML in RAG**: when properly implemented, clustering can significantly improve search quality
+4. **The need for comprehensive evaluation**: multiple metrics and human judgment are essential for assessing success
 
 ### Join the Conversation
 
@@ -602,52 +599,12 @@ The integration of SOM into RAG pipelines has proven to be a successful approach
 
 **I invite the community to build on these successful results, share feedback, and help shape the next generation of RAG + unsupervised ML systems.**
 
-### Key Takeaways
-
-1. **Start Simple**: Begin with reasonable defaults and iterate systematically
-2. **Measure Everything**: Speed, quality, overlap, and human judgment
-3. **Debug Transparently**: Build tools to understand what's happening
-4. **Balance Trade-offs**: There's no perfect solution, only better compromises
-5. **Share Your Journey**: The community benefits from honest, detailed accounts
-6. **Model Quality Matters**: The choice of embedding model is absolutely critical for success
-7. **Persistence Pays Off**: Iterative experimentation can lead to breakthrough improvements
-
-### Future Directions
-
-- **Domain-Specific Fine-tuning**: Fine-tune OpenAI models on technical documentation for even better semantic separation
-- **Multi-Modal SOM**: Incorporating images, tables, code, and other content types
-- **Dynamic Clustering**: Adapting clusters as documents change over time
-- **Hierarchical SOM**: Multi-level clustering for better organization
-- **Interactive Visualization**: Tools for exploring and understanding clusters
-- **Automated Parameter Tuning**: Using ML to optimize ML parameters
-- **Production Deployment**: Scaling the successful approach to larger document collections
-- **Real-time Learning**: Incremental SOM updates as new documents are added
-
-### Visualization Summary
-
-The visualizations created for this experiment provide several key insights:
-
-1. **SOM Visualization (Figure 1)**: High-level overview of how SOM transforms high-dimensional data into organized 2D space
-2. **SOM Grid Visualization (Figure 2)**: Conceptual representation of how documents are mapped to 2D coordinates
-3. **Model Comparison (Figure 3)**: Dramatic improvements achieved by switching to OpenAI text-embedding-3-large
-4. **Pipeline Flow (Figure 4)**: Complete 9-step RAG + SOM enhanced pipeline from query to response
-5. **Cluster Efficiency (Figure 5)**: Analysis of different grid sizes and their impact on efficiency
-6. **Overlap Analysis (Figure 6)**: Detailed breakdown of result overlap across different query types
-7. **Density Analysis (Figure 7)**: Distribution patterns of documents across the SOM grid
-8. **Quality Improvements (Figure 8)**: Query-specific improvements, with JWT validation showing the most dramatic gains
-9. **Cluster Analysis (Figure 9)**: Detailed analysis of cluster distributions and semantic relationships
-10. **Performance Comparison (Figure 10)**: Shows the trade-offs between traditional and SOM-enhanced search across multiple metrics
-
-These visualizations were instrumental in understanding the system's behavior, validating improvements, and communicating results to stakeholders.
-
 ---
 
 **References:**
-- [Comprehensive Search Report](comprehensive_search_report_with_education.md)
-- [Search Comparison Report](search_comparison_report.md) - Detailed analysis of 21 queries comparing traditional vs SOM-enhanced search performance
-- [SOM Optimization Report](som_optimization_report.md)
-- [MuleSoft Technical Articles Dataset](https://huggingface.co/datasets/BassemE/mulesoft-technical-articles) - My custom-created 11,412-document dataset, crawled and chunked from MuleSoft's documentation using custom tools, featuring SOM clustering and OpenAI embeddings
-- [Pre-trained SOM Model](https://huggingface.co/BassemE/som_model) - The trained Self-Organizing Map model ready for experimentation with SOM-enhanced RAG applications
+- [Search Comparison Report](search_comparison_report.md): Detailed analysis of 21 queries comparing traditional vs SOM-enhanced search performance
+- [MuleSoft Technical Articles Dataset](https://huggingface.co/datasets/BassemE/mulesoft-technical-articles): My custom-created 11,412-document dataset, crawled and chunked from MuleSoft's documentation using custom tools, featuring SOM clustering and OpenAI embeddings
+- [Pre-trained SOM Model](https://huggingface.co/BassemE/som_model): The trained Self-Organizing Map model ready for experimentation with SOM-enhanced RAG applications
 
 ---
 
